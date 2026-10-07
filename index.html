@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>作业打卡</title>
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <!-- 登录 / 注册 -->
+  <section id="auth-view" class="screen auth-screen">
+    <div class="auth-logo">
+      <img src="assets/icon.svg" alt="logo" width="76" height="76">
+      <h1>作业打卡</h1>
+      <p>每天作业，AI 帮你安排</p>
+    </div>
+    <div class="auth-card">
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-auth="login">登录</button>
+        <button class="auth-tab" data-auth="register">注册</button>
+      </div>
+      <form id="login-form" class="auth-form">
+        <label>邮箱<input type="email" id="login-email" autocomplete="username" required></label>
+        <label>密码<input type="password" id="login-password" autocomplete="current-password" required></label>
+        <button type="submit" class="btn primary block">登录</button>
+      </form>
+      <form id="register-form" class="auth-form hidden">
+        <label>姓名<input type="text" id="reg-name" required></label>
+        <label>邮箱<input type="email" id="reg-email" autocomplete="username" required></label>
+        <label>密码（至少 6 位）<input type="password" id="reg-password" autocomplete="new-password" required></label>
+        <label>身份
+          <select id="reg-role">
+            <option value="student">学生</option>
+            <option value="parent">家长</option>
+          </select>
+        </label>
+        <button type="submit" class="btn primary block">注册</button>
+      </form>
+      <p class="hint" id="auth-hint">第一位注册的用户会自动成为管理员。</p>
+    </div>
+  </section>
+
+  <!-- 主应用 -->
+  <div id="app" class="hidden">
+    <header class="app-header">
+      <div class="app-header-inner">
+        <span id="app-title">作业打卡</span>
+        <span id="app-role" class="badge"></span>
+        <button id="logout-btn" class="ghost">退出</button>
+      </div>
+    </header>
+    <main id="content" class="content"></main>
+    <nav class="tabbar" id="tabbar"></nav>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="assets/config.js"></script>
+  <script type="module" src="assets/app.js"></script>
+</body>
+</html>

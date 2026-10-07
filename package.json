@@ -1,0 +1,10 @@
+{
+  "name": "homework-checkin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "作业打卡 —— 手机优先，AI 自动识别与排期",
+  "scripts": {
+    "dev": "node server.js",
+    "icons": "node tools/gen-icons.js"
+  }
+}
